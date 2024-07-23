@@ -1,12 +1,22 @@
 ## Text Summarization API with LangChain and FastAPI
 
-This repository provides a simple FastAPI application that uses LangChain to summarize web pages. It leverages the power of Google Gemini Pro and offers language selection for Thai and English summaries.
+This repository provides a simple FastAPI application that uses LangChain to summarize web pages. It leverages the power of Google Gemini Pro and offers language selection for Thai and English summaries. This project also demonstrates the use of LangChain's "stuff" chains for efficient text processing.
 
 ### Features
 
 - **Web Page Summarization:**  Provides concise summaries of web page content.
 - **Multilingual Support:**  Offers summaries in both Thai and English.
 - **FastAPI Framework:**  Uses FastAPI for a modern and performant API experience.
+- **Stuff Chains:** Utilizes LangChain's "stuff" chains for streamlined text processing.
+
+### Stuff Chains Explained
+
+In LangChain, "stuff" chains are used to insert all the documents retrieved by a loader into a single prompt. This is particularly useful when you want to summarize or analyze multiple documents together. 
+
+In this project, the `stuff_chain` takes all the content from a web page, formats it using the `doc_prompt`, and then feeds it as a single input to the language model (Gemini Pro) along with the summarizing prompt. This allows the language model to consider the entire context of the web page when generating a summary.
+
+![Stuff](https://js.langchain.com/v0.1/assets/images/stuff-818da4c66ee17911bc8861c089316579.jpg)
+read more: https://js.langchain.com/v0.1/docs/modules/chains/document/stuff/
 
 ### Installation and Setup
 
